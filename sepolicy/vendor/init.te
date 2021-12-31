@@ -12,3 +12,7 @@ allow init proc_last_kmsg:file setattr;
 allow init vendor_file:file execute;
 
 allow init hwservicemanager:binder { call transfer };
+
+# Allow init to read and write to sysfs_vibrator
+allow init sysfs_vibrator:dir search;
+allow init sysfs_vibrator:file rw_file_perms;

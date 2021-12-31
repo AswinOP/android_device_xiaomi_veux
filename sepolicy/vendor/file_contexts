@@ -23,6 +23,12 @@
 # CIT Display Service
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.citsensorservice@1\.1-service                                                         u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 
+# Data Files
+/data/vendor/dolby(/.*)?                                             u:object_r:vendor_data_file:s0
+
+# Display
+/sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode             u:object_r:sysfs_doze:s0
+
 # FastCharge
 /sys/class/power_supply/bms/fastcharge_mode                                                                                    u:object_r:vendor_sysfs_battery_supply:s0
 
@@ -41,6 +47,12 @@
 /data/vendor/silead(/.*)?                                                                                                      u:object_r:fingerprint_vendor_data_file:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2.3-service\.xiaomi                                                  u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/vendor\.silead\.hardware\.fingerprintext@1\.0-service                                                           u:object_r:hal_fingerprint_default_exec:s0
+
+# Haptic
+/sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/ulevel             u:object_r:sysfs_vibrator:s0
+
+# HALS
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service   u:object_r:hal_dms_default_exec:s0
 
 # IR
 /dev/ir_spi                                                                                                                    u:object_r:ir_spi_device:s0

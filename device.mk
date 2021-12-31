@@ -284,7 +284,14 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libcodec2_hidl@1.0.vendor \
     libcodec2_hidl@1.1.vendor \
-    libcodec2_vndk.vendor
+    libcodec2_vndk.vendor \
+    libcodec2_soft_common.vendor \
+    libsfplugin_ccodec_utils.vendor
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_sdmmagpie_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_vendor_sdmmagpie_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml
 
 # Mlipay
 PRODUCT_PACKAGES += \
@@ -555,6 +562,10 @@ PRODUCT_PACKAGES += \
     vndservicemanager \
     libvndksupport \
     libvndksupport.vendor
+
+# Xiaomi Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
